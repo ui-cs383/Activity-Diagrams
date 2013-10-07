@@ -1,4 +1,14 @@
-'State diagram for program execution
+'####################################
+' ProgramOverview is the base statechart from which all other
+' statecharts will be based from (i.e. they will be children 
+' of ProgramOverview at some point).
+'
+' This statechart shows the program execution from
+' the user starting the application to closing it.
+'
+' No parent.
+' Written by: Chris Waltrip
+'####################################
 
 @startuml
 'Set width to easily fit inside a portrait page

@@ -1,3 +1,9 @@
+# PlantUML #
+############
+# Don't include the images by default to reduce clutter
+*.png
+*.svg
+
 # LaTeX logs #
 ##############
 *.aux
