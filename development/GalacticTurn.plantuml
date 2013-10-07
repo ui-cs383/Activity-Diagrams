@@ -22,7 +22,7 @@ MainImperialPlayerTurn --> MainRebelControlCheck : Imperial player finished Miss
 
 MainRebelControlCheck : Determines what planets will become Rebel-controlled, if any, and if so, if any sort of domino effect will occur.
 MainRebelControlCheck --> InstantVictory : Instant victory condition was met.
-MainRebelControlChecl --> [*] : No instant victory condition was met
+MainRebelControlCheck --> [*] : No instant victory condition was met
 
 InstantVictory : If an instant victory that is defined in the scenario or game rules is met, the game is over and will move to the PostGameScreen.
 InstantVictory --> [*]
