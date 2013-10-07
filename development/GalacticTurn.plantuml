@@ -1,0 +1,53 @@
+'####################################
+' GalacticTurn: An overview of an entire game turn.
+'
+' Parent: PlayGame
+' Written by: Chris Waltrip
+'####################################
+
+@startuml
+[*] --> GalacticTurnInitialState : Scenario setup complete.
+GalacticTurnInitialState --> GalacticStage : Galactic game was chosen
+GalacticTurnInitialState --> MainRebelPlayerTurn : Star System or Province Game was chosen
+
+MainRebelPlayerTurn : This is the bulk of the GalacticTurn.  The rebel and imperial game turns are identical to each other with very slight differences.
+MainRebelPlayerTurn : Contains the following phases
+MainRebelPlayerTurn : Operations Phase
+MainRebelPlayerTurn : Search Phase
+MainRebelPlayerTurn : Mission Phase
+
+MainRebelPlayerTurn --> MainImperialPlayerTurn : Rebel Player finished MissionPhase
+MainImperialPlayerTurn : Identical to MainRebelPlayerTurn.  Contains the same phases.
+MainImperialPlayerTurn --> MainRebelControlCheck : Imperial player finished MissionPhase.
+
+MainRebelControlCheck : Determines what planets will become Rebel-controlled, if any, and if so, if any sort of domino effect will occur.
+MainRebelControlCheck --> InstantVictory : Instant victory condition was met.
+MainRebelControlChecl --> [*] : No instant victory condition was met
+
+InstantVictory : If an instant victory that is defined in the scenario or game rules is met, the game is over and will move to the PostGameScreen.
+InstantVictory --> [*]
+
+
+GalacticStage : Contains the following phases
+GalacticStage : GalacticEventPhase
+GalacticStage : ResourcePhase
+GalacticStage : StrategicAssignmentPhase
+
+GalacticStage --> GalacticRebelPlayerTurn : User finishes StrategicAssignmentPhase
+
+GalacticRebelPlayerTurn : Identical to MainRebelPlayerTurn except that it only occurs in the Galactic Game.
+GalacticRebelPlayerTurn : This just shows that the each individual GalacticTurn in Galactic Games involves two sets of player turns
+
+GalacticRebelPlayerTurn --> GalacticImperialPlayerTurn : Rebel Player finishes MissionPhase.
+
+GalacticImperialPlayerTurn : Identical to MainImperialPlayerTurn except that it is the first of two full sets of player turns that occur in each single GalacticTurn in Galactic Games.
+GalacticImperialPlayerTurn --> GalacticRebelControlCheck : Imperial player finishes MissionPhase.
+
+GalacticRebelControlCheck : Identical to MainRebelControlCheck except that it is the first of two full sets of player turns that occur in each single GalacticTurn in Galactic Games.
+' Could there be an instant victory here to to the domino effect?
+
+GalacticRebelControlCheck --> MainRebelPlayerTurn : RebelControlCheck finished without instant victory conditions being met.
+'GalacticRebelControlCheck --> InstantVictory : Instant victory condition was met.
+
+
+@enduml
