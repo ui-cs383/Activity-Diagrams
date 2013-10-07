@@ -15,9 +15,10 @@ The parent of each diagram is in parentheses after the name of the state.  Also,
 ### Awaiting Review
  1.  ProgramOverview
  1.  OptionsScreen
+ 1.  PlayGame
 
 ### In progress
- 1.  PlayGame (ProgramOverview - Chris)
+ 1.  GalacticTurn (PlayGame - Chris)
 
 ### Unassigned
  1.  DisplayMenu (ProgramOverview)
@@ -25,3 +26,4 @@ The parent of each diagram is in parentheses after the name of the state.  Also,
  1.  MatchmakingScreen (ProgramOverview)
  1.  PostGameScreen (ProgramOverview)
  1.  ProgramExit (ProgramOverview)
+ 1.  ScenarioSetup (PlayGame)

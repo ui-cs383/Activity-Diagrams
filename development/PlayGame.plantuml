@@ -1,0 +1,28 @@
+'####################################
+' PlayGame shows the seqeunce of play for an entire game.
+'
+' Though this statechart looks like it should be consolidated
+' its parent, its children will likely be large enough to
+' warrant it being its own statechart.
+'
+' Parent: ProgramOverview
+' Written by: Chris Waltrip
+'####################################
+
+@startuml
+[*] --> ScenarioSetup : User started game
+ScenarioSetup : Anything that the backend needs to do to
+ScenarioSetup : set the game state up is completed and then
+ScenarioSetup : anything that the user needs to do before
+ScenarioSetup : the start of the galactic turns will then
+ScenarioSetup : be done.
+
+ScenarioSetup --> GalacticTurn : User and opponent finished any pregame setup required
+
+GalacticTurn : The bulk of the game is played here.
+GalacticTurn : This state is composed of every element of a single game turn
+
+'GalacticTurn --> GalacticTurn : This will loop for however many turns the scenario dictates, anywhere between 6 and 20 times.
+GalacticTurn --> [*] : User and opponent finished final galactic turn
+GalacticTurn --> [*] : User or opponent completed instant victory condition
+@enduml
