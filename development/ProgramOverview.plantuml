@@ -1,0 +1,36 @@
+'State diagram for program execution
+
+@startuml
+'Set width to easily fit inside a portrait page
+'scale 600 width
+[*] --> MainMenu : User (Player) launches application
+MainMenu : Displays various options to the user for interacting with the program
+MainMenu -right-> GameOptionsScreen : User clicks Play Game
+MainMenu -down-> ExitProgram : User clicks Exit Program
+MainMenu -left-> OptionsScreen : User clicks Options
+
+
+OptionsScreen : User may change game resolution
+OptionsScreen --> MainMenu : User clicks Save Changes
+
+GameOptionsScreen : Displays game options required to start the game:
+GameOptionsScreen : Single Player/Multiplayer
+GameOptionsScreen : Faction
+GameOptionsScreen : Game Type
+GameOptionsScreen : Scenario
+GameOptionsScreen --> MatchmakingScreen : User chooses Single Player, faction, game type and scenario
+
+GameOptionsScreen --> PlayGame : User chooses Multiplayer, faction, game type and scenario
+
+MatchmakingScreen : Matchmaking helps to find another User to play the game with
+MatchmakingScreen --> PlayGame : User found another user to play game against
+
+PlayGame : The entire game is played
+PlayGame --> PostGameScreen : User plays the entire game
+
+PostGameScreen : Displays results of the previous game such as winner and victory points earned
+PostGameScreen --> MainMenu : User clicks Leave Post-Game Overview
+
+ExitProgram : Quits the application and closes all related processes
+ExitProgram --> [*]
+@enduml
