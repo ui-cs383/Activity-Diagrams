@@ -47,7 +47,7 @@ GalacticRebelControlCheck : Identical to MainRebelControlCheck except that it is
 ' Could there be an instant victory here to to the domino effect?
 
 GalacticRebelControlCheck --> MainRebelPlayerTurn : RebelControlCheck finished without instant victory conditions being met.
-'GalacticRebelControlCheck --> InstantVictory : Instant victory condition was met.
+GalacticRebelControlCheck --> InstantVictory : Instant victory condition was met.
 
 
 @enduml
