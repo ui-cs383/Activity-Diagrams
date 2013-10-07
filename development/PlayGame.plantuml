@@ -22,7 +22,7 @@ ScenarioSetup --> GalacticTurn : User and opponent finished any pregame setup re
 GalacticTurn : The bulk of the game is played here.
 GalacticTurn : This state is composed of every element of a single game turn
 
-'GalacticTurn --> GalacticTurn : This will loop for however many turns the scenario dictates, anywhere between 6 and 20 times.
+GalacticTurn --> GalacticTurn : This will loop for however many turns the scenario dictates, anywhere between 6 and 20 times.
 GalacticTurn --> [*] : User and opponent finished final galactic turn
 GalacticTurn --> [*] : User or opponent completed instant victory condition
 @enduml
