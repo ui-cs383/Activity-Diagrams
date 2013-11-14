@@ -1,0 +1,36 @@
+@startuml
+
+title Activity Diagram\nSearch Phase
+
+' Search Phase
+' Written by Samuel Foster
+' Parents: /Turn/Starsystem-Turn
+' Children: /Combat/Character-Combat
+
+(*) --> "Search by Environ" as Is
+	Is -->[Environs Remain] "Select Environ:\n<i>Non-Phasing" as Se
+    Is -->[No Environs Remain] (*)
+    Se --> "Organize Stacks:\n<i>Non-Phasing" as Os
+    Os --> if "Character\nSearch"
+    		  -->[True] "Character Search" as Cs
+    	   else
+    		  -->[False] "Military Search" as Ms
+    	   endif
+ 
+ 	Cs -->[Found] if "Attack" then
+ 				-->[True] "<b>Character Combat</b>" as C1
+ 				--> Ms
+ 			else
+ 				-->[False] Ms
+ 			endif
+ 	Cs -->[Not Found] Ms
+
+ 		
+ 	Ms -->[Found] if "Attack" then
+ 				-->[True] "<b>Character Combat</b>" as C2
+ 				--> Is
+ 			else
+ 				-->[False] Is
+ 			endif
+ 	Ms -->[Not Found] Is
+@enduml

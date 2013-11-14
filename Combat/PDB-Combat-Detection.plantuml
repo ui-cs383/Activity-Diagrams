@@ -1,0 +1,24 @@
+@startuml
+
+title Activity Diagram\nPDB Combat/Detection
+
+' PDB Combat/Detection
+' Written by Samuel Foster
+' Parents: /Turn/Starsystem-Turn
+' Children: 
+
+(*) --> "Initiate PDB Combat/Detection" as In
+	--> if "PDB Up" then
+			-->[True] "Determine Stack Type" as Det
+		else
+			-->[False] (*)
+		endif
+	
+	Det -->[Character] "Detection Routine"
+		--> (*)
+	Det -->[Military] "PDB Attack?\n<i>Non-Phasing" as Pa
+		Pa --> [True] "Resolve PDB Combat" as Rc
+		Rc --> (*)
+		
+		Pa -->[False] (*)
+@enduml

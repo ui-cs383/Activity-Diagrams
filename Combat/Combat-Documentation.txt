@@ -1,0 +1,30 @@
+* Character Combat
+	* User Actions
+		* Attacker
+			* Determine Combat Type
+				- User action if Character attackers, else automatic
+			* Determine Kill/Capture
+				- User action for Character/Squad attackers, else automatic
+				- Simple kill/capture decision
+		* Defender
+			* Select Active/Inactive Characters
+			* Attempt Breakoff
+				- Simple yes/no decision
+
+	* Subroutines
+		* Resolve Breakoff
+		* Resolve Attack
+		* Resolve Defense
+
+	* Additional Activity Diagrams
+		* None
+
+* Military Combat
+	* User Actions
+		* Attacker
+			* Select Leader
+		* Defender
+			* Select Leader
+
+	* Subroutines
+		* Resolve Combat
