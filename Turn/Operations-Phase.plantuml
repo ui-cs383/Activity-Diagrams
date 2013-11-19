@@ -1,0 +1,17 @@
+@startuml
+
+title Activity Diagram\nOperations Phase
+
+' Operations Phase
+' Written by Samuel Foster
+' Parents: /Turn/Starsystem-Player-Turn
+' Children: /Turn/Movement-Segment /Turn/Reaction-Segment /Turn/Military-Combat-Segment
+
+(*) --> "<b>Movement Segment" as MS
+
+MS --> "<b>Reaction Segment\n<i>Non-Phasing" as RS
+
+RS --> "<b>Military Combat Segment" as MCS
+
+--> (*)
+@enduml
