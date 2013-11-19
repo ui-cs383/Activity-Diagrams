@@ -1,0 +1,17 @@
+@startuml
+
+title Activity Diagram\nStarsystem Player Turn
+
+' Starsystem Player Turn
+' Written by Samuel Foster
+' Parents: /Turn/Starsystem-Game-Turn
+' Children:
+
+(*) --> "<b>Operations Phase" as OP
+
+OP --> "<b>Search Phase\n<i>Non-Phasing" as SP
+
+SP --> "<b>Mission Phase" as MP
+
+MP --> (*)
+@enduml

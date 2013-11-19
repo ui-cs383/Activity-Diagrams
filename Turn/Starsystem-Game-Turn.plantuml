@@ -1,0 +1,16 @@
+@startuml
+
+title Activity Diagram\nStarsystem Game Turn
+
+' Starsystem Game Turn
+' Written by Samuel Foster
+' Parents: /Starsystem-Game
+' Children: /Turn/Starsystem-Player-Turn
+
+(*) --> "<b>Starsystem Player Turn\n<i>Rebel" as PR
+
+PR --> "<b>Starsystem Player Turn\n<i>Imperial" as PI
+
+PI --> "Game Turn Interphase" as GI
+
+@enduml
