@@ -3,9 +3,12 @@ Activity-Diagrams
 
 * TODO:
     * Activity Diagrams:
+    	* Write Starsystem-Game
         * Rework Search-Phase
         * Write Mission Segments
         * Consider alternate Military-Combat-Segment environ selection (simultaneous rather than sequential)
+        * Write Rebel and Imperial Setup diagrams
+        * Consider checking game state for instant victory at the beginning or end of some segment
     * Documentation:
         * Create standard format
         * Create documentation for Combat

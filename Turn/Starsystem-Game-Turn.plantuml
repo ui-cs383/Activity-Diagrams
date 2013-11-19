@@ -13,4 +13,6 @@ PR --> "<b>Starsystem Player Turn\n<i>Imperial" as PI
 
 PI --> "Game Turn Interphase" as GI
 
+GI --> (*)
+
 @enduml

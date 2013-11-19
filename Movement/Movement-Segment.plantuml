@@ -7,7 +7,14 @@
 
 title Activity Diagram\nMovement Segment
 
-(*) --> "Manage Stacks" as OS
+(*) --> "Upkeep" as U
+' Any reinforcements received from Scenario specifications are put into play at this time.
+' If the Game Turn is odd, the Rebel Player may flip Up one Down PDB at this time.
+' If the Game Turn is even, the Imperial Player may flip Up one Down PDB
+
+U --> "Movement" as M
+
+M --> "Manage Stacks" as OS
 'Note, this includes transporting Non-Mobile Military Units
 
 OS -->[Done Moving] (*)

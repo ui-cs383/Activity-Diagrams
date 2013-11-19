@@ -1,0 +1,23 @@
+@startuml
+
+title Activity Diagram\nStarsystem Game
+
+' Starsystem Game
+' Written by Samuel Foster
+' Parents: 
+' Children: /Turn/Starsystem-Game-Turn
+
+(*) --> "Set up Scenario" as SS
+
+SS --> "<b>Imperial Setup" as IS
+
+IS --> "<b>Rebel Setup" as RS
+
+RS --> "<b>Starsystem Game Turn" as GT
+
+GT -->[Instant Victory] "Game Over" as GG
+GT -->[End of Turn\n(Over Turn Limit)] GG
+GT -->[End of Turn] GT
+
+GG --> (*)
+@enduml
