@@ -8,14 +8,17 @@ title Activity Diagram\nOperations Phase
 ' Children: /Movement/Movement-Segment /Movement/Reaction-Segment /Combat/Military-Combat-Segment
 
 (*) --> "<b>Movement Segment" as MS
+MS --> "Organize Stacks" as OS1
+'Phasing Player organizes stacks in "unorganized" environs into Military/Character stack and Character stack
 
-MS --> "<b>Reaction Segment\n<i>Non-Phasing" as RS
+OS1 --> "<b>Reaction Segment\n<i>Non-Phasing" as RS
 
 RS --> "<b>Military Combat Segment" as MCS
 
 MCS --> "Eliminate Excess Military" as EM
 
-EM --> "Organize Stacks"
+EM --> "Organize Stacks" as OS2
+'As above
 
---> (*)
+OS2 --> (*)
 @enduml

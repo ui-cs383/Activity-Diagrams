@@ -5,7 +5,6 @@ Activity-Diagrams
     * Activity Diagrams:
         * Rework Search-Phase
         * Write Mission Segments
-        * Write Reaction Segment
         * Consider alternate Military-Combat-Segment environ selection (simultaneous rather than sequential)
     * Documentation:
         * Create standard format

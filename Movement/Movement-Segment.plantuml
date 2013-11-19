@@ -7,7 +7,8 @@
 
 title Activity Diagram\nMovement Segment
 
-(*) --> "Organize Stacks" as OS
+(*) --> "Manage Stacks" as OS
+'Note, this includes transporting Non-Mobile Military Units
 
 OS -->[Done Moving] (*)
 OS -->[Continue Moving] "Select Stack to Move" as SS   
@@ -22,7 +23,11 @@ SD -->[Destination] "Determine Legality" as DL
 
 DL -->[Illegal] SD
 DL -->[Legal] "Determine Movement Type" as DM
-
+'Note: Characters can only make Interplanetary movements if stacked with a Spaceship or Mobile Military Unit(s)
+'Non-Mobile Military Units can only be moved if transported by a Mobile Military Unit
+'A Spaceship may only be moved if it is stacked with Military Units or a Character with Navigation >= 1
+'A Spaceship has a maximum capacity when carrying only Characters
+'Players "should" be warned about legal, but stupid moves (like abandoning a Spaceship or overfilling an Environ)
 
 DM -->[Intraplanetary\nSpaceship] "<b>Detection/PDB Combat\nOrigin Planet" as DROP1
 DROP1 --> "Intraplanetary Movement\n(Env to Env)" as IMEE
