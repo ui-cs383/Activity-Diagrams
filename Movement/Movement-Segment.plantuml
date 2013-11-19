@@ -1,0 +1,51 @@
+@startuml
+
+' Movement Segment
+' Written by Samuel Foster
+' Parents: /Turn/Operations-Phase
+' Children: 
+
+title Activity Diagram\nMovement Segment
+
+(*) --> "Organize Stacks" as OS
+
+OS -->[Done Moving] (*)
+OS -->[Continue Moving] "Select Stack to Move" as SS   
+'Note, all units in the stack must have not moved
+
+SS -->[No Move] OS
+SS -->[Stack Selected] "Select Destination" as SD
+
+SD -->[No Destination] SS
+SD -->[Destination] "Determine Legality" as DL    
+'Note, possibly warn players of overfilling destination environ
+
+DL -->[Illegal] SD
+DL -->[Legal] "Determine Movement Type" as DM
+
+
+DM -->[Intraplanetary\nSpaceship] "<b>Detection/PDB Combat\nOrigin Planet" as DROP1
+DROP1 --> "Intraplanetary Movement\n(Env to Env)" as IMEE
+DM -->[Intraplanetary\nNo-Spaceship] IMEE
+' Note, Detection is removed on Characters
+DM -->[Interplanetary] "<b>Detection/PDB Combat\nOrigin Planet" as DROP2
+' Note, if no Detection routine is possible when leaving planet, Detection is removed on Characters
+DROP2 --> "<b>Detection/PDB Combat\nDestination Planet" as DRDP1
+DRDP1 --> "Interplanetary Movement" as IMPP
+
+DROP1 -->[Stack Destroyed] OS
+DROP2 -->[Stack Destroyed] OS
+DRDP1 -->[Stack Destroyed] OS
+
+IMEE --> "Resolve Movement" as RM
+IMPP --> RM
+
+RM --> "Remove\nDamaged/Abandoned\nSpaceships" as RBS
+
+RBS --> OS
+
+'-->[Destination too Small\nfor Military Units] "Warn Player" as WP
+'WP -->[Continue] "
+'WP -->[Cancel] SD
+
+@enduml

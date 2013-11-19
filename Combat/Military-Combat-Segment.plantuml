@@ -2,7 +2,7 @@
 
 ' Military Combat Segment
 ' Written by Samuel Foster
-' Parents: /Turn/Starsystem-Turn
+' Parents: /Turn/Operations-Phase
 ' Children: /Combat/Military-Combat 
 
 title Activity Diagram\nMilitary Combat Segment
