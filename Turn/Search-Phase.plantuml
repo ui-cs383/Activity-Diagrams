@@ -4,7 +4,7 @@ title Activity Diagram\nSearch Phase
 
 ' Search Phase
 ' Written by Samuel Foster
-' Parents: /Turn/Starsystem-Turn
+' Parents: /Turn/Starsystem-Player-Turn
 ' Children: /Combat/Character-Combat
 
 (*) --> "Search by Environ" as Is
