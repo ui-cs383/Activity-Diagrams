@@ -3,7 +3,7 @@
 ' Movement Segment
 ' Written by Samuel Foster
 ' Parents: /Turn/Operations-Phase
-' Children: 
+' Children: /Combat/Detection-PDB-Combat
 
 title Activity Diagram\nMovement Segment
 

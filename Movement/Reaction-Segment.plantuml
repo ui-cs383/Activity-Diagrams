@@ -1,0 +1,29 @@
+@startuml
+
+' Reaction Segment
+' Written by Samuel Foster
+' Parents: /Turn/Operations-Phase
+' Children: 
+
+title Activity Diagram\nReaction Segment
+
+(*) --> "Select Unit(s) to Move" as SU
+
+SU -->[Unit(s) Selected] "Select Destination" as SD
+SU -->[Player Done] (*)
+
+SD -->[Destination] "Determine Legality" as DL
+SD -->[No Destination] SU
+
+DL -->[Legal] "Resolve Movement" as RM
+DL -->[Illegal] SD
+' Note: can move either one Military Unit, one Military Unit with Leader, or one Character
+' Can only move from Environ to Environ on the same Planet
+' Can only move to Environs containing enemy Military Units or detected Characters
+' Can only move to an Environ where a Reaction Movement has not occurred
+
+RM --> "Stack Moved Units\n(Optional)" as SM
+
+SM --> SU
+
+@enduml 
