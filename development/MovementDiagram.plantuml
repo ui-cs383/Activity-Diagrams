@@ -1,0 +1,19 @@
+'Movement Activity Diagram
+'Written by Chris Waltrip
+
+@startuml
+
+'title Activity Diagram\Movement\Chris Waltrip
+
+(*) --> "Move Unit" as MU
+    MU --> "Check Destination Size" as CDS
+    CDS -->[Environ to Environ] "Check Planet Control" as CPC
+        CPC -->[Player Controlled] "Move to Environ"
+        CPC -->[Enemy Controlled] "Form of Travel" as FT
+            DR -->[Spaceship or Military] "Undergo Detection Routine" as UDR
+                UDR --> (*)
+            DR -->[Characters on Foor] "Move to Environ"
+    CDS -->[Planet to Planet] "Check Current Planet Control" as CCPC
+    CCPC --> "Move to Environ"
+
+@enduml

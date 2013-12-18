@@ -1,0 +1,52 @@
+# PlantUML #
+############
+# Don't include the images by default to reduce clutter
+*.png
+*.svg
+
+# LaTeX logs #
+##############
+*.aux
+# We want the user to compile the tex file themselves, so don't
+# include the pdf
+*.pdf
+# Don't include the new stylesheet I'm working on
+newusecases.sty
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

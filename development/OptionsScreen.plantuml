@@ -1,0 +1,17 @@
+'####################################
+' OptionsScreen displays any options not related to the game itself
+' such as changing the resolution
+'
+' This Statechart is an example of one that would likely just be placed
+' into its parent diagram.
+'
+' Parent: ProgramOverview
+' Written by: Chris Waltrip
+'####################################
+
+@startuml
+[*] --> OptionsScreen : User clicked Options Screen from MainMenu
+OptionsScreen : Displays various options to the user, such as the current resolution and allows the user to change the options.
+
+OptionsScreen --> [*] : User chose to save to abandon the current options
+@enduml
