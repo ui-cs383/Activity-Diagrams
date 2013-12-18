@@ -1,4 +1,4 @@
-# State-Charts
+# Actvity-Diagrams
 
 ## This information is outdated!!!!
 
