@@ -1,0 +1,24 @@
+@startuml
+
+title Activity Diagram\nOperations Phase
+
+' Operations Phase
+' Written by Samuel Foster
+' Parents: /Turn/Starsystem-Player-Turn
+' Children: /Movement/Movement-Segment /Movement/Reaction-Segment /Combat/Military-Combat-Segment
+
+(*) --> "<b>Movement Segment" as MS
+MS --> "Organize Stacks" as OS1
+'Phasing Player organizes stacks in "unorganized" environs into Military/Character stack and Character stack
+
+OS1 --> "<b>Reaction Segment\n<i>Non-Phasing" as RS
+
+RS --> "<b>Military Combat Segment" as MCS
+
+MCS --> "Eliminate Excess Military" as EM
+
+EM --> "Organize Stacks" as OS2
+'As above
+
+OS2 --> (*)
+@enduml

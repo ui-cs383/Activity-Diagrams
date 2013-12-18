@@ -1,5 +1,7 @@
 # State-Charts
 
+## This information is outdated!!!!
+
 ## Statechart Diagrams
 While working on the statechart diagrams, use the development folder.
 For now, use any file extension you'd like.  In the end they will be named .plantuml or something similar to make it obvious what they are.
@@ -34,3 +36,19 @@ Focus on statecharts that pertain to the star system game first, then the provin
  1.  **PlayerTurn (GalacticTurn)**
  1.  **RebelControlCheck (GalacticTurn)**
  1.  GalacticStage (GalacticTurn)
+=======
+Activity-Diagrams
+============
+
+* TODO:
+    * Activity Diagrams:
+        * Rework Search-Phase
+        * Write Mission Segments
+        * Consider alternate Military-Combat-Segment environ selection (simultaneous rather than sequential)
+        * Write Rebel and Imperial Setup diagrams
+        * Consider checking game state for instant victory at the beginning or end of some segment
+    * Documentation:
+        * Create standard documentation format
+        * Create documentation for Combat
+        * Create documentation for Turns/Segments
+        * Create documentation for Movement

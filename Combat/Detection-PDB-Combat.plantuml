@@ -1,0 +1,23 @@
+@startuml
+
+title Activity Diagram\nDetection/PDB Attack
+
+' Detection/PDB Attack
+' Written by Samuel Foster
+' Parents: /Movement/Movement-Segment
+' Children: 
+
+(*) -->[PDB Down\nor\nOwned by <i>Phasing-Player] (*)
+(*)	-->[PDB Up\nand\nHostile] "Determine Stack Type" as Det
+
+Det -->[Character] "Detection Routine" as DetR
+Det -->[Military/Mixed] "PDB Attack?\n<i>Non-Phasing" as PA
+
+DetR --> (*)
+
+PA -->[True] "Resolve PDB Combat" as RC
+RC --> (*)
+
+PA -->[False] (*)
+
+@enduml
