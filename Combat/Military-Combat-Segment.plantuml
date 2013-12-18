@@ -1,0 +1,21 @@
+@startuml
+
+' Military Combat Segment
+' Written by Samuel Foster
+' Parents: /Turn/Operations-Phase
+' Children: /Combat/Military-Combat 
+
+title Activity Diagram\nMilitary Combat Segment
+
+(*) --> "Military Combat by Environ" as Im
+    Im -->[Environs Remain] "Select Environ:\n<i>Phasing" as Se
+	Im -->[No Environs Remain] (*)
+    
+    Se --> "Determine Attacking Player" as Da
+    
+    Da --> [Attacker] "<b>Military Combat" as Mc
+    Da --> [No Attacker] Im
+    
+    Mc --> Im
+  	
+@enduml

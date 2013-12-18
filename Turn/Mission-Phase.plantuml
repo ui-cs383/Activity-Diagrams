@@ -1,0 +1,20 @@
+@startuml
+
+title Activity Diagram\nMission Phase
+
+' Mission Phase
+' Written by Samuel Foster
+' Parents: /Turn/Starsystem-Player-Turn
+' Children: /Turn/Mission-Assignment-Segment /Turn/Mission-Action/Segment /Turn/Bonus-Draw-Segment
+
+(*) --> "Perform Missions by Environ" as PM
+
+PM -->[No Environs Remain\nor\nPlayer Done] (*)
+PM -->[Player Selects Environ] "<b>Mission Assignment Segment" as MAS
+
+MAS --> "<b>Mission Action Segment" as MA
+
+MA --> "<b>Bonus Draw Segment" as BD
+
+BD --> PM
+@enduml

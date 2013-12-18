@@ -1,0 +1,29 @@
+@startuml
+
+title Activity Diagram\nCharacter Combat
+
+' Military Combat Segment
+' Written by Samuel Foster
+' Parents: /Turn/Search-Phase
+' Children: 
+
+(*) --> "Initiate Character Combat"
+	--> "Determine Combat Type\n<i>Attacker"
+	--> "Determine Kill/Capture\n<i>Attacker"
+	--> "Combat Round" as Cr
+	Cr --> "Select Active/Inactive Characters\n<i>Defender" as Sc
+	Sc --> "Attempt Breakoff" as Ab
+	Ab -->[True] "Resolve Breakoff" as Rb
+	
+	Rb -->[Defenders Remain] "Resolve Attack" as Ra
+	Rb -->[No Defenders Remain] (*)
+	
+	Ab -->[False] Ra
+	
+	Ra -->[Defenders Remain] "Resolve Defense" as Rd
+	Ra -->[No Defenders Remain] (*)
+	
+	Rd -->[Defenders Remain] Cr
+	Rd -->[No Defenders Remain] (*)
+
+@enduml
